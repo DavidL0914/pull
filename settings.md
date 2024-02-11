@@ -3,6 +3,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Settings</title>
+  <!-- Include your SCSS styling file -->
+  <link rel="stylesheet" href="frontcasts-styling.css">
 </head>
 <body>
   <div class="container">
@@ -15,11 +17,8 @@
       <label for="password">New Password:</label>
       <input type="password" id="password" name="password">
       <br>
-      <label for="theme">Theme:</label>
-      <select id="theme" name="theme">
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-      </select>
+      <span>Theme:</span>
+      <button id="toggle-theme">Light</button>
       <br>
       <label for="font-size">Font Size:</label>
       <select id="font-size" name="font-size">
@@ -34,30 +33,53 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Fetch user's theme preference from the backend
-      const userTheme = "light"; // Replace this with the actual value fetched from the backend
-
-      // Apply theme class to the body
-      document.body.classList.add(userTheme);
-
       // Edit username button functionality
       document.getElementById('edit-username').addEventListener('click', function() {
         const usernameInput = document.getElementById('username');
         usernameInput.disabled = !usernameInput.disabled;
       });
 
+      // Toggle theme functionality
+      document.getElementById('toggle-theme').addEventListener('click', function() {
+        const currentTheme = document.getElementById('toggle-theme').textContent;
+        const newTheme = currentTheme === 'Light' ? 'Dark' : 'Light';
+        document.getElementById('toggle-theme').textContent = newTheme;
+
+        // Toggle dark-theme class on the body element
+        document.body.classList.toggle('dark-theme');
+      });
+
       // Save settings functionality
       document.getElementById('save-settings').addEventListener('click', function() {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
-        const theme = document.getElementById('theme').value;
+        const theme = document.getElementById('toggle-theme').textContent; // Get the theme text directly from the button
         const fontSize = document.getElementById('font-size').value;
 
-        // Save settings to local storage or send to backend
-        // Here you can send the settings to the backend to update in the database
-        // For demonstration purpose, we are not implementing backend interaction
-
-        alert('Settings saved successfully!');
+        // Send settings data to backend
+        fetch('/save_settings', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            username: username,
+            password: password,
+            theme: theme,
+            'font-size': fontSize
+          })
+        })
+        .then(response => {
+          if (response.ok) {
+            alert('Settings saved successfully!');
+          } else {
+            alert('Failed to save settings.');
+          }
+        })
+        .catch(error => {
+          console.error('Error saving settings:', error);
+          alert('Failed to save settings.');
+        });
       });
     });
   </script>
