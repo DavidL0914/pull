@@ -1,6 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primary-color: #fff;
+    --secondary-color: #333;
+}
+.dark-theme{
+    --primary-color: #333;
+    --secondary-color: #fff;
+}
+
 .form-container {
     text-align: center;
-    background-color: #ffffff; /* Optional: Add a background color */
+    background-color: var(--secondary-color); /* Optional: Add a background color */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -91,11 +105,11 @@ body {
 }
 
 nav {
-  background-color: #333;
+  background-color: var(--primary-color);
   overflow: hidden;
 }
 nav button {
-  background-color:#333;
+  background-color:var(--primary-color);
   float: left;
   display: block;
   color: white;
@@ -134,7 +148,7 @@ nav button.active {
   color: white;
 }
 .headnav {
-  background-color: #333;
+  background-color: var(--primary-color);
   padding: 10px 0;
   width: 100%;
   margin-bottom: 20px;
@@ -143,7 +157,7 @@ nav button.active {
 
 .headnav a {
   text-decoration: none;
-  color: #fff;
+  color: var(--secondary-color);
   font-weight: bold;
   font-size: 18px;
   text-align: left;
@@ -157,6 +171,6 @@ nav button.active {
 
 header.site-header {
   background-color: rgb(0, 0, 0);
-  color: #fff;
+  color: var(--secondary-color);
   text-align: left;
 }

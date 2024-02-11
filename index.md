@@ -15,7 +15,8 @@ search_exclude: true
     <a href="http://127.0.0.1:4100/frontcasts/signup">Signup</a>
     <a href="http://127.0.0.1:4100/frontcasts/edit">Edit</a>
     <a href="http://127.0.0.1:4100/frontcasts/data">Data</a>
-    <button onclick = "eraseCookie()">Logout </button>
+    <a href="http://127.0.0.1:4100/frontcasts/settings">User Settings</a>
+    <button onclick = "eraseCookie()">Logout</button>
 </nav>
 
 <!-- Your page content goes here -->

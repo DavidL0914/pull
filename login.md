@@ -32,7 +32,7 @@ function signup() {
         body: JSON.stringify(data),
         credentials: 'include'
     }
-    fetch('http://127.0.0.1:8086/api/users/authenticate', options)
+    fetch('http://127.0.0.1:8008/api/users/authenticate', options)
     .then(response => {
         if (response.ok) {
             // Handle successful login
