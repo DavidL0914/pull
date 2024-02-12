@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chocolate Chip Cookies Recipe</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  .container { display: flex; max-width: 800px; margin: auto; }
+  .instructions, .notes { padding: 20px; }
+  .instructions { flex: 3; }
+  .notes { flex: 1; background-color: #f0f0f0; margin-left: 20px; padding: 10px; }
+  input[type="checkbox"] { margin-right: 10px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="instructions">
+    <h1>Chocolate Chip Cookies</h1>
+    <p>Follow these simple steps to bake the perfect chocolate chip cookies.</p>
+
+    <h2>Ingredients</h2>
+    <ul>
+      <li>1 cup (2 sticks) unsalted butter, softened</li>
+      <li>3/4 cup granulated sugar</li>
+      <li>3/4 cup packed brown sugar</li>
+      <li>1 teaspoon vanilla extract</li>
+      <li>2 large eggs</li>
+      <li>2 1/4 cups all-purpose flour</li>
+      <li>1 teaspoon baking soda</li>
+      <li>1/2 teaspoon salt</li>
+      <li>2 cups (12-oz. pkg.) chocolate chips</li>
+    </ul>
+
+    <h2>Instructions</h2>
+    <form>
+      <label><input type="checkbox"> Preheat oven to 375°F (190°C).</label><br>
+      <label><input type="checkbox"> Beat butter, granulated sugar, brown sugar, and vanilla extract in large mixer bowl until creamy.</label><br>
+      <label><input type="checkbox"> Add eggs, one at a time, beating well after each addition.</label><br>
+      <label><input type="checkbox"> Gradually beat in flour, baking soda, and salt.</label><br>
+      <label><input type="checkbox"> Stir in chocolate chips.</label><br>
+      <label><input type="checkbox"> Drop by rounded tablespoon onto ungreased baking sheets.</label><br>
+      <label><input type="checkbox"> Bake for 9 to 11 minutes or until golden brown.</label><br>
+      <label><input type="checkbox"> Cool on baking sheets for 2 minutes; remove to wire racks to cool completely.</label><br>
+    </form>
+
+    <p>Want to save this recipe for later? Feel free to bookmark it!</p>
+  </div>
+  
+  <div class="notes">
+    <h2>Notes</h2>
+    <p>For softer cookies, try using half brown sugar and half white sugar. This provides a perfect balance of crisp edges with a soft middle.</p>
+    <p>Chill your dough before baking to enhance the flavor and prevent the cookies from spreading too much.</p>
+    <p>Experiment with different types of chocolate for a unique taste. Mixing dark, milk, and white chocolate can create a delightful variety of flavors.</p>
+    <textarea flex="1">Personal notes go here...</textarea> 
+  </div>
+</div>
+
+</body>
+</html>
