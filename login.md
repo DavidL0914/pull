@@ -53,7 +53,6 @@ function signup() {
         else {
             // Handle incorrect login information
             document.getElementById("error").innerHTML = "Incorrect Login Information";
-            // You can also redirect to an error page or display a 403 error here
         }
     })
     .catch(error => {

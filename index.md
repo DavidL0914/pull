@@ -19,8 +19,6 @@ search_exclude: true
     <button onclick = "eraseCookie()">Logout</button>
 </nav>
 
-<!-- Your page content goes here -->
-
 </body>
 </html>
 
