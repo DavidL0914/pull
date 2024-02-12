@@ -13,8 +13,10 @@
 </div>
 <div id = "recipediv"></div>
 <div class = "info"><p id = "info">  Welcome to our recipe searcher!<br>  Input any prompt into the text box,<br>  and click the search button.<br>  The results will include the name of the dish with a <br>  link to a recipe, and an image of the finished product.<br>  The results of the search will appear to the left of this text!</p></div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div id = "instructions" class = "instructions"></div>
 <script>
-const api_key = "272127c95c2e49f59530b1acb1b5de6c";
+const api_key = "353ca5d1296e4a1187d417811123d58b";
 const options = {
                 method: 'GET',
                 headers: {
@@ -23,7 +25,7 @@ const options = {
             };
 function search() {
     const query = document.getElementById("query").value;
-    const api_key = "272127c95c2e49f59530b1acb1b5de6c";
+    const api_key = "353ca5d1296e4a1187d417811123d58b";
     const search_api_url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${api_key}&query=${query}`;
             fetch(search_api_url, options)
             .then(response => response.json())
@@ -41,6 +43,9 @@ function fetchinfo(id) {
     if (document.getElementById("info").innerHTML != ""){ 
         document.getElementById("info").innerHTML = ""
     }
+    if (document.getElementById("instructions").innerHTML != ""){ 
+        document.getElementById("instructions").innerHTML = ""
+    }
     const info_api_url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${api_key}`;
     fetch(info_api_url, options)
     .then(response => response.json())
@@ -49,8 +54,8 @@ function fetchinfo(id) {
         data.extendedIngredients.forEach(ing => {
             document.getElementById("info").innerHTML += "<li>" + ing.name + "</li>"
         })
-        document.getElementById("info").innerHTML += "<br></ul>"
-        console.log(ing.instructions)
+        document.getElementById("info").innerHTML += "<br></ul>" 
+        document.getElementById("instructions").innerHTML += "<strong>Instructions for " + data.title + "<br>" + data.instructions + "<br>"
     }) 
 }
 function displayRecipes(recipes) {
@@ -83,10 +88,10 @@ function displayRecipes(recipes) {
         recipeList.appendChild(recipeDiv);
     });
 
-    // Add pagination controls
+    // Add page controls
     const totalPages = Math.ceil(recipes.length / recipesPerPage);
-    const paginationDiv = document.createElement("div");
-    paginationDiv.classList.add("pagination");
+    const pageDiv = document.createElement("div");
+    pageDiv.classList.add("page");
 
     // Previous page button
     const prevButton = document.createElement("button");
@@ -97,7 +102,7 @@ function displayRecipes(recipes) {
             displayRecipes(recipes);
         }
     });
-    paginationDiv.appendChild(prevButton);
+    pageDiv.appendChild(prevButton);
 
     // Next page button
     const nextButton = document.createElement("button");
@@ -108,9 +113,9 @@ function displayRecipes(recipes) {
             displayRecipes(recipes);
         }
     });
-    paginationDiv.appendChild(nextButton);
+    pageDiv.appendChild(nextButton);
 
-    recipeList.appendChild(paginationDiv);
+    recipeList.appendChild(pageDiv);
 }
 
 

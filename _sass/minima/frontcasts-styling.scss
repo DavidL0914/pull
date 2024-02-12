@@ -110,7 +110,7 @@ nav button {
   background-color:var(--primary-color);
   float: left;
   display: block;
-  color: white;
+  color: var(--primary-color);
   border: none;
   text-align: center;
   padding: 14px 16px;
@@ -120,7 +120,7 @@ nav button {
 nav a {
   float: left;
   display: block;
-  color: white;
+  color: var(--primary-color);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -197,12 +197,27 @@ header.site-header {
   z-index: -1;
   right: 0;
   top: 30%;
-  background-color: #333;
+  background-color: white;
   margin-right: 210px;
   border-radius: 8px;
-  color: white;
+  color: #333;
   font-size: x-large;
-  padding: 30px 10px; /* Adjusted padding syntax */
+  padding: 30px 10px;
+  overflow-y: scroll;
+}
+.instructions {
+  width: fit-content;
+  position: relative;
+  z-index: -1;
+  right: 0;
+  top: 100%;
+  background-color: white;
+  margin-top: 500px;
+  margin-right: 210px;
+  border-radius: 8px;
+  color: #333;
+  font-size: x-large;
+  padding: 30px 10px; /* Adjusted  padding syntax */
   overflow-y: scroll; /* Added scroll for vertical overflow */
 }
 
