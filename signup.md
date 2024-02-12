@@ -32,7 +32,7 @@ function signup() {
     },
     body: JSON.stringify(data)
 }
-    let sign_up = fetch('http://127.0.0.1:8086/api/users/', options);
+    let sign_up = fetch('http://127.0.0.1:8008/api/users/', options);
     sign_up.then(response => {
         if (response.status === 200) {
             window.location.href = "http://127.0.0.1:4100/frontcasts/login.html"
