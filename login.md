@@ -10,7 +10,7 @@
         <input type="text" id="user" class="input" placeholder="Username"><br>
         <input type="password" id="pass" class="input" placeholder="Password">
     </form>
-    <button class="submit" onclick="signup()">Log In</button>
+    <button class="submit" onclick="login()">Log In</button>
     <p id="error"></p>
     <button onclick="switchToSignup()">Switch to Signup</button>
 </div>
@@ -18,7 +18,7 @@
 function switchToSignup() {
     window.location.href = "http://127.0.0.1:4100/frontcasts/signup.html";
 }
-function signup() {
+function login() {
     data = {
         "name": document.getElementById("name").value,
         "uid": document.getElementById("user").value,
@@ -32,7 +32,7 @@ function signup() {
         body: JSON.stringify(data),
         credentials: 'include'
     }
-    fetch('http://127.0.0.1:8086/api/users/authenticate', options)
+    fetch('http://127.0.0.1:8008/api/users/authenticate', options)
     .then(response => {
         if (response.ok) {
             // Handle successful login
@@ -53,7 +53,6 @@ function signup() {
         else {
             // Handle incorrect login information
             document.getElementById("error").innerHTML = "Incorrect Login Information";
-            // You can also redirect to an error page or display a 403 error here
         }
     })
     .catch(error => {

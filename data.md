@@ -1,4 +1,8 @@
 <html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <div>
 <pre id = "data"></pre>
 </div>
@@ -11,7 +15,7 @@ let options = {
     },
     credentials: 'include'
 }
-    fetch("http://127.0.0.1:8086/api/users/", options)
+    fetch("http://127.0.0.1:8008/api/users/", options)
         .then(response => {
             let access = response.status !== 401 && response.status !== 403;
             return response.json().then(data => ({ data, access }));
