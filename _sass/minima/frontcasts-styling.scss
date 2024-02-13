@@ -12,6 +12,15 @@
     --secondary-color: #fff;
 }
 
+.info {
+  background-color: var(--primary-color);
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  margin-top: 25px;
+}
 .form-container {
     text-align: center;
     background-color: #fff; /* Optional: Add a background color */
@@ -73,26 +82,27 @@ body {
     margin-bottom: 10px;
     box-sizing: border-box;
   }
-
-  .submit {
-    background-color: $primary-color;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
-
-  button {
-    background-color: transparent;
-    color: $primary-color;
-    border: none;
-    cursor: pointer;
-  }
-
   p {
     color: red;
     margin-top: 10px;
   }
+  button {
+    background-color: $primary-color;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+}
+button {
+    border: none;
+    background-color: $primary-color;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 body {
@@ -179,51 +189,15 @@ header.site-header {
   color: var(--secondary-color);
   text-align: left;
 }
-
+strong {
+  font-size: x-large;
+}
 #recipediv {
-  width: 50%;
-  max-height: 80%;
-  overflow-y: scroll;
-  left: 50%;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.info {
-  width: fit-content;
-  position: absolute;
-  z-index: -1;
-  right: 0;
-  top: 30%;
-  background-color: white;
-  margin-right: 210px;
-  border-radius: 8px;
-  color: #333;
-  font-size: x-large;
-  padding: 30px 10px;
-  overflow-y: scroll;
-}
-.instructions {
-  width: fit-content;
-  position: relative;
-  z-index: -1;
-  right: 0;
-  top: 100%;
-  background-color: white;
-  margin-top: 1000px;
-  margin-right: 210px;
-  border-radius: 8px;
-  color: #333;
-  font-size: x-large;
-  padding: 30px 10px; /* Adjusted  padding syntax */
-  overflow-y: scroll; /* Added scroll for vertical overflow */
-}
-
-#searchfor {
-  padding: 5px;
-  margin-bottom: 10px
+  background-color: var(--primary-color);
+  align-content: center;
+  margin: 15px;
+  padding: 30px;
+  border-radius: 5px;
 }
 .recipe {
   top: 25%;
