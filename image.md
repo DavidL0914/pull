@@ -77,23 +77,19 @@
         <button class="submit" onclick="submitImage()">Submit</button>
         <p id="error"></p>
     </div>
-
     <div class="data-container">
         <h2>Image Data</h2>
         <div id="data"></div>
     </div>
-
     <script>
         function submitImage() {
             // Get the text content from the textarea
             let imageContent = document.getElementById("image").value;
-
             // Ensure the text content is not empty
             if (!imageContent.trim()) {
                 document.getElementById("error").innerHTML = "Please enter some text before submitting.";
                 return;
             }
-
             // Create an object with the text data and a unique UID (timestamp)
             let data = {
                 "name": "Dummy Name",
@@ -101,7 +97,6 @@
                 "password": "dummyPassword",
                 "image": imageContent
             };
-
             // Configure fetch options
             let options = {
                 method: 'POST',
@@ -111,14 +106,12 @@
                 body: JSON.stringify(data),
                 credentials: 'include'
             };
-
             // Send the text data to the backend
             fetch('http://127.0.0.1:8008/api/users/', options)
                 .then(response => {
                     if (response.ok) {
                         // Handle successful submission
                         document.getElementById("error").innerHTML = "Image submitted successfully";
-
                         // Fetch updated images after submission
                         fetchImages();
                     } else {
@@ -137,7 +130,6 @@
                     document.getElementById("error").innerHTML = "Error submitting image";
                 });
         }
-
         function fetchImages() {
             let options = {
                 method: 'GET',
@@ -146,7 +138,6 @@
                 },
                 credentials: 'include'
             };
-
             fetch("http://127.0.0.1:8008/api/users/", options)
                 .then(response => {
                     let access = response.status !== 401 && response.status !== 403;
@@ -156,7 +147,6 @@
                     if (access) {
                         let dataContainer = document.getElementById("data");
                         dataContainer.innerHTML = "";  // Clear previous content
-
                         // Create a box for each item in the array
                         data.forEach(item => {
                             let box = document.createElement("div");
@@ -173,7 +163,6 @@
                     document.getElementById("data").textContent = "Error fetching images";
                 });
         }
-
         // Call the fetchImages function when the page loads
         window.onload = fetchImages;
     </script>
