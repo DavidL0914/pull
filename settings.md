@@ -9,17 +9,18 @@
     <div class="container">
         <h1>User Settings</h1>
         <div class="settings-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username">
-            <br>
-            <label for="password">New Password:</label>
-            <input type="password" id="password" name="password">
-            <br>
             <span>Theme:</span>
             <button id="toggle-theme">Light</button>
             <br>
-            <button id="save-settings">Save Settings</button>
-            <div id="notification"></div>
+            <h2>Edit Username</h2>
+            <label for="uid">Your User ID:</label>
+            <input type="text" id="uid" name="uid">
+            <br>
+            <label for="new-username">New Username:</label>
+            <input type="text" id="new-username" name="new-username">
+            <br>
+            <button id="save-changes">Save Changes</button>
+            <div id="edit-notification"></div>
         </div>
     </div>
     <script>
@@ -75,6 +76,37 @@
                 .catch(error => {
                     console.error('Error saving settings:', error);
                     document.getElementById('notification').textContent = 'Failed to save settings.';
+                });
+            }
+            // Save changes functionality
+            document.getElementById('save-changes').addEventListener('click', function() {
+                const uid = document.getElementById('uid').value;
+                const newUsername = document.getElementById('new-username').value;
+                // Send data to backend for updating user
+                updateUsername(uid, newUsername);
+            });
+            function updateUsername(uid, newUsername) {
+                const data = {
+                    "uid": uid,
+                    "name": newUsername
+                };
+                fetch('http://127.0.0.1:8008/api/users/', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        document.getElementById('edit-notification').textContent = 'Username updated successfully!';
+                    } else {
+                        document.getElementById('edit-notification').textContent = 'Failed to update username.';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error updating username:', error);
+                    document.getElementById('edit-notification').textContent = 'Failed to update username.';
                 });
             }
         });
