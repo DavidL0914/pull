@@ -17,7 +17,8 @@ search_exclude: true
     <a href="http://127.0.0.1:4100/frontcasts/edit">Edit</a>
     <a href="http://127.0.0.1:4100/frontcasts/data">Data</a>
     <a href="http://127.0.0.1:4100/frontcasts/settings">User Settings</a>
-    <a href="http://127.0.0.1:4100/frontcasts/search">Search</a>
+    <a href="http://127.0.0.1:4100/frontcasts/image.html">Forum</a>
+    <a href="http://127.0.0.1:4100/frontcasts/search.html">Search</a>
     <a href="http://127.0.0.1:4100/frontcasts/image">Share</a>
     <button onclick="eraseCookie()">Logout</button>
 </nav>

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +16,7 @@
             justify-content: center;
             min-height: 100vh;
             background-color: #f5f5f5;
-            overflow-yscroll: auto;
+            overflow-y: ;
         }
 
         .form-container {
@@ -71,16 +70,16 @@
 </head>
 <body>
     <div class="form-container">
-        <h2 id="pageTitle">Forum</h2>
+        <h2 id="pageTitle">Submit Image</h2>
         <form>
-            <textarea id="image" class="input" placeholder="Ask Question Here"></textarea><br>
+            <textarea id="image" class="input" placeholder="Enter your text here"></textarea><br>
         </form>
         <button class="submit" onclick="submitImage()">Submit</button>
         <p id="error"></p>
     </div>
 
     <div class="data-container">
-        <h2>Questions!</h2>
+        <h2>Image Data</h2>
         <div id="data"></div>
     </div>
 
