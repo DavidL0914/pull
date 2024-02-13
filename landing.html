@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookbook Website</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .parallax {
+            background-image: url('https://wallpapers.com/images/hd/delicious-food-clbuyttqwkpopk89.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .parallax:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent, transparent);
+            z-index: 1;
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            padding: 30px;
+            font-size: 30px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            background-color: rgba(30, 30, 30, 0.477);
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav a {
+            float: right;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .welcome-text-bar {
+            background-color: #ffffffcb;
+            padding: 60px; /* Adjusted padding for a larger welcome text bar */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            font-size: 20px;
+        }        
+
+        .main-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .recipe-container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .recipe-list {
+            display: flex;
+            animation: scroll 60s linear infinite;
+            /* Added the scrolling animation back */
+        }
+
+        .recipe-card {
+            flex: 0 0 calc(33.33% - 40px);
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-150%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="http://127.0.0.1:4100/frontcasts/login">Login</a>
+        <a href="http://127.0.0.1:4100/frontcasts/signup">Sign Up</a>
+    </nav>
+
+    <div class="parallax">
+        <header>
+            <h1>The IDEAL Cookbook</h1>
+        </header>
+    </div>
+
+    <div class="welcome-text-bar">
+        <p>Welcome to The IDEAL Cookbook – your go-to cookbook for hassle-free cooking! We offer a vast selection of
+            easy-to-follow recipes with clear instructions and simple formatting. Use our search feature to find your
+            desired dish or ingredient, and explore various options. Cooking has never been this convenient and
+            enjoyable. Welcome to a world where delicious recipes meet user-friendly design.</p>
+        <p>Get started by Signing Up or Logging in now! Happy cooking!</p>
+    </div>
+
+    <div class="main-content">
+        <div class="recipe-container">
+            <div class="recipe-list">
+                <div class="recipe-card">
+                    <img src="https://s23209.pcdn.co/wp-content/uploads/2022/12/220602_DD_Homemade-Bolognese_175-200x200.jpg" alt="Recipe Image">
+                    <h2>Pasta!</h2>
+                </div>
+
+                <div class="recipe-card">
+                    <img src="https://peasandcrayons.com/wp-content/uploads/2014/12/homemade-vegetarian-minestrone-soup-recipe-0035-200x200.jpg" alt="Recipe Image">
+                    <h2>Soup!</h2>
+                </div>
+
+                <div class="recipe-card">
+                    <img src="https://i0.wp.com/kristineskitchenblog.com/wp-content/uploads/2023/08/homemade-mac-and-cheese-recipe-25-2.jpg?fit=200%2C200&ssl=1" alt="Recipe Image">
+                    <h2>Mac & Cheese!</h2>
+                </div>
+
+                <div class="recipe-card">
+                    <img src="https://bakingmischief.com/wp-content/uploads/2017/02/how-to-make-fluffy-buttermilk-pancakes-for-two-image-square-200x200.jpg" alt="Recipe Image">
+                    <h2>Pancakes!</h2>
+                </div>
+
+                <!-- Add more recipe cards as needed -->
+                <div class="recipe-card">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/014/001/912/small/gourmet-fresh-delicious-homemade-hamburger-free-photo.jpg" alt="Recipe Image">
+                    <h2>Burger!</h2>
+                </div>
+                <div class="recipe-card">
+                    <img src="https://www.thecountrycook.net/wp-content/uploads/2021/11/thumbnail-Homemade-Yeast-Rolls-200x200.jpg" alt="Recipe Image">
+                    <h2>Rolls!</h2>
+                </div>
+
+                <div class="recipe-card">
+                    <img src="https://minimalistbaker.com/wp-content/uploads/2013/06/The-Best-Gluten-Free-Pizza-Dough-square-200x200.jpg" alt="Recipe Image">
+                    <h2>Pizza!</h2>
+                </div>
+
+                <!-- Add more recipe cards as needed -->
+                <div class="recipe-card">
+                    <img src="https://www.completelydelicious.com/wp-content/uploads/2018/05/caesar-salad-3-200x200.jpg" alt="Recipe Image">
+                    <h2>Salad!</h2>
+                </div>
+                <div class="recipe-card">
+                    <img src="https://peasandcrayons.com/wp-content/uploads/2017/05/quick-easy-homemade-cornbread-recipe-peasandcrayons-0419-200x200.jpg" alt="Recipe Image">
+                    <h2>Cornbread!</h2>
+                </div>
+
+                <div class="recipe-card">
+                    <img src="https://www.authenticfoodquest.com/wp-content/uploads/2021/06/Closeup_HomemadeDulcedeLeche_AuthenticFoodQuest-200x200.jpg" alt="Recipe Image">
+                    <h2>Sauce!</h2>
+                </div>
+
+                <!-- Add more recipe cards as needed -->
+                <div class="recipe-card">
+                    <img src="https://bakingamoment.com/wp-content/uploads/2018/09/IMG_9883-easy-homemade-puff-pastry-recipe-square-200x200.jpg" alt="Recipe Image">
+                    <h2>Pastry!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
