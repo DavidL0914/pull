@@ -20,7 +20,7 @@ search_exclude: true
     <a href="http://127.0.0.1:4100/frontcasts/image.html">Forum</a>
     <a href="http://127.0.0.1:4100/frontcasts/search.html">Search</a>
     <a href="http://127.0.0.1:4100/frontcasts/image">Share</a>
-    <button onclick="eraseCookie()">Logout</button>
+    <button class = "logoutbutton" onclick="eraseCookie()">Logout</button>
 </nav>
 
 <!-- Your page content goes here -->

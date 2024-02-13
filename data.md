@@ -4,10 +4,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <div>
-<pre id = "data"></pre>
+<div id = "data"></div>
 </div>
 </html>
 <script>
+function generateHTMLTable(data) {
+    let htmlTable = "<table><thead><tr><th>ID</th><th>Image</th><th>Name</th><th>Role</th><th>UID</th></tr></thead><tbody>";
+    data.forEach(item => {
+        htmlTable += `<tr><td>${item.id}</td><td>${item.image}</td><td>${item.name}</td><td>${item.role}</td><td>${item.uid}</td></tr>`;
+    });
+    htmlTable += "</tbody></table>";
+    return htmlTable;
+}
 let options = {
     method: 'GET',
     headers: {
@@ -23,7 +31,7 @@ let options = {
         .then(({data, access}) => {
             console.log(access)
             if (access){ 
-            document.getElementById("data").textContent = JSON.stringify(data, null, 2);
+            document.getElementById("data").innerHTML = "<strong>Data for all users<br><br></strong>" + generateHTMLTable(data);
             }
             else {
                 document.getElementById("data").textContent = "Unauthorized.";

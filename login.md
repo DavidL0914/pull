@@ -48,7 +48,7 @@ function login() {
                 console.log('JWT Token not found');
             }
             // Redirect to the desired page after successful login
-            window.location.href = "http://127.0.0.1:4100/frontcasts/";
+            window.location.href = "http://127.0.0.1:4100/frontcasts/home";
         }
         else {
             // Handle incorrect login information

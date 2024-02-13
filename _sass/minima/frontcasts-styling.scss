@@ -21,6 +21,9 @@
   border-radius: 5px;
   margin-top: 25px;
 }
+.logoutbutton {
+  color: red
+}
 .form-container {
     text-align: center;
     background-color: #fff; /* Optional: Add a background color */
@@ -112,13 +115,20 @@ body {
   background-color: #f4f4f4;
 }
 
+tr, td {
+  background-color: var(--primary-color);
+}
+#data {
+  background-color: $primary-color;
+  padding: 10px;
+} 
 nav {
   background-color: var(--primary-color);
   overflow: hidden;
 }
 nav button {
   background-color:var(--primary-color);
-  float: left;
+  float: left;  
   display: block;
   color: var(--primary-color);
   border: none;
