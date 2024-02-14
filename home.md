@@ -13,13 +13,13 @@ search_exclude: true
 <body>
 
 <nav>
-    <a href="http://127.0.0.1:4100/frontcasts/signup">Signup</a>
-    <a href="http://127.0.0.1:4100/frontcasts/edit">Edit</a>
-    <a href="http://127.0.0.1:4100/frontcasts/data">Data</a>
-    <a href="http://127.0.0.1:4100/frontcasts/settings">User Settings</a>
-    <a href="http://127.0.0.1:4100/frontcasts/image.html">Forum</a>
-    <a href="http://127.0.0.1:4100/frontcasts/search.html">Search</a>
-    <a href="http://127.0.0.1:4100/frontcasts/image">Share</a>
+    <a href="https://davidl0914.github.io/frontcasts/signup">Signup</a>
+    <a href="https://davidl0914.github.io/frontcasts/edit">Edit</a>
+    <a href="https://davidl0914.github.io/frontcasts/data">Data</a>
+    <a href="https://davidl0914.github.io/frontcasts/settings">User Settings</a>
+    <a href="https://davidl0914.github.io/frontcasts/image.html">Forum</a>
+    <a href="https://davidl0914.github.io/frontcasts/search.html">Search</a>
+    <a href="https://davidl0914.github.io/frontcasts/image">Share</a>
     <button class = "logoutbutton" onclick="eraseCookie()">Logout</button>
 </nav>
 
@@ -45,7 +45,7 @@ search_exclude: true
             return
         }
         else {
-            window.location.href = "http://127.0.0.1:4100/frontcasts/login.html"
+            window.location.href = "https://davidl0914.github.io/frontcasts/login.html"
         }
     })
 
