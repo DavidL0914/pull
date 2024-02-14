@@ -3,7 +3,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Submission</title>
-    
     <style>
         /* Your CSS code goes here */
         body {
@@ -77,48 +76,38 @@
         <button class="submit" onclick="submitImage()">Submit</button>
         <p id="error"></p>
     </div>
-
     <div class="data-container">
         <h2>Image Data</h2>
         <div id="data"></div>
     </div>
-
     <script>
         function submitImage() {
             // Get the text content from the textarea
             let imageContent = document.getElementById("image").value;
-
             // Ensure the text content is not empty
             if (!imageContent.trim()) {
                 document.getElementById("error").innerHTML = "Please enter some text before submitting.";
                 return;
             }
-
             // Create an object with the text data and a unique UID (timestamp)
             let data = {
-                "name": "Dummy Name",
-                "uid": "dummyUid_" + Date.now(),  // Use a timestamp to make the UID unique
-                "password": "dummyPassword",
                 "image": imageContent
             };
-
             // Configure fetch options
             let options = {
-                method: 'POST',
+                method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json;charset=utf-8'
                 },
                 body: JSON.stringify(data),
                 credentials: 'include'
             };
-
             // Send the text data to the backend
-            fetch('http://127.0.0.1:8008/api/users/', options)
+            fetch('http://127.0.0.1:8008/api/users/image', options)
                 .then(response => {
                     if (response.ok) {
                         // Handle successful submission
                         document.getElementById("error").innerHTML = "Image submitted successfully";
-
                         // Fetch updated images after submission
                         fetchImages();
                     } else {
@@ -137,7 +126,6 @@
                     document.getElementById("error").innerHTML = "Error submitting image";
                 });
         }
-
         function fetchImages() {
             let options = {
                 method: 'GET',
@@ -146,22 +134,31 @@
                 },
                 credentials: 'include'
             };
-
-            fetch("http://127.0.0.1:8008/api/users/", options)
+            fetch("http://127.0.0.1:8008/api/users/image", options)
                 .then(response => {
-                    let access = response.status !== 401 && response.status !== 403;
+                    let access = response.status !== 403;
                     return response.json().then(data => ({ data, access }));
                 })
                 .then(({ data, access }) => {
                     if (access) {
+                        let itemlist = [];
+                        data.forEach(entry => {
+                            if (entry.includes("///")) {
+                                let splitEntries = entry.split("///");
+                                console.log(itemlist)
+                                itemlist = itemlist.concat(splitEntries);
+                            } else {
+                                itemlist.push(entry);
+                            }
+                        })
+                        console.log(itemlist)
                         let dataContainer = document.getElementById("data");
                         dataContainer.innerHTML = "";  // Clear previous content
-
                         // Create a box for each item in the array
-                        data.forEach(item => {
+                        itemlist.forEach(item => {
                             let box = document.createElement("div");
                             box.className = "data-box";
-                            box.textContent = item.image;  // Assuming 'image' is the property you want to display
+                            box.textContent = item;  // Assuming 'image' is the property you want to display
                             dataContainer.appendChild(box);
                         });
                     } else {
@@ -173,7 +170,6 @@
                     document.getElementById("data").textContent = "Error fetching images";
                 });
         }
-
         // Call the fetchImages function when the page loads
         window.onload = fetchImages;
     </script>
