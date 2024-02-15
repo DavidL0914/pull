@@ -31,7 +31,8 @@ function login() {
         },
         body: JSON.stringify(data),
         credentials: 'include',
-        cache: 'no-cache'
+        cache: 'no-cache',
+        credentials: "same-origin"
     }
     fetch('https://backcasts.stu.nighthawkcodingsociety.com/api/users/authenticate', options)
     .then(response => {
