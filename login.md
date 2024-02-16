@@ -30,9 +30,7 @@ function login() {
             'Content-Type': 'application/json;charset=utf-8'
         },
         body: JSON.stringify(data),
-        credentials: 'include',
-        cache: 'no-cache',
-        credentials: "same-origin"
+        credentials: 'include'
     }
     fetch('https://backcasts.stu.nighthawkcodingsociety.com/api/users/authenticate', options)
     .then(response => {

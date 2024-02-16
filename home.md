@@ -34,10 +34,9 @@ search_exclude: true
 
     // Function to get the cookie value by name
     function getCookie(name) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-}
+        var match = document.cookie.match(RegExp('(?:^|;\\s*)' + name + '=([^;]*)')); 
+        return match ? match[1] : null;
+    }
 
     // Check if the JWT cookie exists on page load
     addEventListener("load", (event) => {
