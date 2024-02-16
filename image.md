@@ -69,7 +69,7 @@
 </head>
 <body>
     <div class="form-container">
-        <h2 id="pageTitle">Submit Image</h2>
+        <h2 id="pageTitle">Ask Questions on Recipe Here!</h2>
         <form>
             <textarea id="image" class="input" placeholder="Enter your text here"></textarea><br>
         </form>
@@ -77,7 +77,7 @@
         <p id="error"></p>
     </div>
     <div class="data-container">
-        <h2>Image Data</h2>
+        <h2>Forum:</h2>
         <div id="data"></div>
     </div>
     <script>
