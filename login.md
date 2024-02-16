@@ -16,7 +16,7 @@
 </div>
 <script>
 function switchToSignup() {
-    window.location.href = "https://davidl0914.github.io/frontcasts/signup.html";
+    window.location.href = "http://127.0.0.1:4100/frontcasts/signup.html";
 }
 function login() {
     data = {
@@ -32,7 +32,7 @@ function login() {
         body: JSON.stringify(data),
         credentials: 'include'
     }
-    fetch('https://backcasts.stu.nighthawkcodingsociety.com/api/users/authenticate', options)
+    fetch('http://127.0.0.1:8008/api/users/authenticate', options)
     .then(response => {
         if (response.ok) {
             // Handle successful login
@@ -48,7 +48,7 @@ function login() {
                 console.log('JWT Token not found');
             }
             // Redirect to the desired page after successful login
-            window.location.href = "https://davidl0914.github.io/frontcasts/home";
+            window.location.href = "http://127.0.0.1:4100/frontcasts/home";
         }
         else {
             // Handle incorrect login information
