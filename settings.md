@@ -59,7 +59,7 @@
                 saveSettings({ username: username, password: password, theme: theme });
             });
             function saveSettings(data) {
-                fetch('https://backcasts.stu.nighthawkcodingsociety.com/api/users/save_settings', {
+                fetch('http://127.0.0.1:8008/api/users/save_settings', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -90,7 +90,7 @@
                     "uid": uid,
                     "name": newUsername
                 };
-                fetch('https://backcasts.stu.nighthawkcodingsociety.com/api/users/', {
+                fetch('http://127.0.0.1:8008/api/users/', {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
