@@ -45,6 +45,14 @@
             .then(data => {
                 alert('Settings saved successfully');
                 console.log(data);
+                // Check if theme is 'light' or 'dark' and switch CSS variables accordingly
+                if (theme === 'light') {
+                    document.documentElement.style.setProperty('--primary-color', '#fff');
+                    document.documentElement.style.setProperty('--secondary-color', '#333');
+                } else if (theme === 'dark') {
+                    document.documentElement.style.setProperty('--primary-color', '#333');
+                    document.documentElement.style.setProperty('--secondary-color', '#fff');
+                }
             })
             .catch(error => {
                 document.getElementById("error-message").innerText = error.message;
