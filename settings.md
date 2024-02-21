@@ -22,10 +22,8 @@
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
             const theme = document.getElementById("theme").value;
-            // Assign the correct uid value from the database
-            const uid = "root";
-            // Assign the correct name value from the database
-            const name = "Admin";
+            const uid = "root"; // Assign the correct uid value from the database
+            const name = "Admin"; // Assign the correct name value from the database
             const data = {
                 uid: uid,
                 name: name,
@@ -41,7 +39,7 @@
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('User does not exist');
+                    throw new Error('User or theme does not exist');
                 }
                 return response.json();
             })
