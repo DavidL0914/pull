@@ -19,13 +19,16 @@
     </div>
     <script>
         function saveSettings() {
-            const uid = document.getElementById("uid").value;
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
             const theme = document.getElementById("theme").value;
+            // Assign the correct uid value from the database
+            const uid = "root";
+            // Assign the correct name value from the database
+            const name = "Admin";
             const data = {
                 uid: uid,
-                name: username,
+                name: name,
                 password: password,
                 theme: theme
             };
