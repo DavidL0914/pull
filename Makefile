@@ -6,7 +6,7 @@ LOG_FILE = /tmp/jekyll$(PORT).log
 SHELL = /bin/bash
 # .SHELLFLAGS = -e # Exceptions will stop make, works on MacOS
 
-# Phony Targets, makefile housekeeping for below definitions
+# Phony Targets, makefile housekeeping for below definition
 .PHONY: default server convert clean stop
 
 # List all .ipynb files in the _notebooks directory
